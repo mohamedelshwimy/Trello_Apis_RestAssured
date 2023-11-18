@@ -6,6 +6,7 @@ import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
@@ -25,10 +26,12 @@ public class BaseTests {
     protected String boardName = "Testing Board";
     protected String boardIndex = "0";
     protected String listName = "Testing List";
+    protected String cardName = "Testing Card";
 
     protected static String memberBoardID;
     protected static String boardID;
     protected static String listID;
+    protected static String cardID;
 
     //URL and Endpoints
     protected String mainURL = "https://api.trello.com/1/";
@@ -63,7 +66,7 @@ public class BaseTests {
     public void extractBoardIdFromMember(){
         memberBoardID = given()
                             .spec(requestSpecification)
-                            .pathParam("id",(Object) memberUsername)
+                            .pathParam("id", memberUsername)
                             .header(acceptHeader)
                         .when()
                             .get(membersEndpoint+"{id}")
@@ -89,5 +92,18 @@ public class BaseTests {
                      .get(boardsEndpoint+"{id}"+"/lists")
                  .then()
                      .extract().path("[" + listIndex + "].id");
+    }
+    @Test
+    public void extractCardIdFromMember(){
+        extractBoardIdFromMember();
+        cardID = given()
+                    .spec(requestSpecification)
+                    .pathParam("id",memberBoardID)
+                .log().all()
+                .when()
+                    .get(boardsEndpoint+"{id}"+"/cards")
+                .then()
+                .log().all()
+                    .extract().path("[0].id");
     }
 }

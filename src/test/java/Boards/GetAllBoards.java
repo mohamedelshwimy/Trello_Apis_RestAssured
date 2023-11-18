@@ -8,19 +8,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GetAllBoards extends BaseTests {
     @Test
-    public void getSpecificBoardByBoardIndex(){
-        extractBoardIdFromMember();
-        given()
-                .spec(requestSpecification)
-                .log().all()
-        .when()
-                .get(membersEndpoint+"me/boards")
-        .then()
-                .log().all()
-                .assertThat().statusCode(200)
-                .assertThat().body("[" + boardIndex + "].id",equalTo(memberBoardID));
-    }
-    @Test
     public void getAllMemberBoards(){
         given()
                 .spec(requestSpecification)

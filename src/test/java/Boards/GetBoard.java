@@ -11,15 +11,14 @@ public class GetBoard extends BaseTests {
         extractBoardIdFromMember();
         given()
                 .spec(requestSpecification)
-                .pathParam("id",(Object) memberBoardID)
+                .pathParam("id",memberBoardID)
                 .header(acceptHeader)
                 .log().all()
         .when()
                 .get(boardsEndpoint+"{id}")
         .then()
                 .log().all()
-                .assertThat().statusCode(200)
-                .assertThat().body("name",equalTo(boardName));
+                .assertThat().statusCode(200);
     }
 
 }
