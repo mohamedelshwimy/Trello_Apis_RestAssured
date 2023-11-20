@@ -93,7 +93,7 @@ public class BaseTests {
                  .then()
                      .extract().path("[" + listIndex + "].id");
     }
-    @Test
+
     public void extractCardIdFromMember(){
         extractBoardIdFromMember();
         cardID = given()

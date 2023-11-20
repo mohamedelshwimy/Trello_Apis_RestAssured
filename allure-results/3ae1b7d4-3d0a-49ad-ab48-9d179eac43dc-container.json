@@ -1,0 +1,1 @@
+{"uuid":"3ae1b7d4-3d0a-49ad-ab48-9d179eac43dc","name":"Cards.GetCard","children":["918c3f95-ce99-42a0-bb27-c71547fadd70"],"befores":[{"name":"createRequestSpec","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1700461693374,"stop":1700461693374}],"afters":[],"start":1700461682540,"stop":1700461699016}

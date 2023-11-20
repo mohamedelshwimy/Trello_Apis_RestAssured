@@ -2,6 +2,7 @@ package Boards;
 
 import BaseTests.BaseTests;
 import io.restassured.http.ContentType;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -9,6 +10,7 @@ import static org.hamcrest.Matchers.*;
 public class CreateBoard extends BaseTests {
 
     @Test
+    @Description("Create a Testing Board")
     public void testCreateBoard(){
         given()
                 .spec(requestSpecification)

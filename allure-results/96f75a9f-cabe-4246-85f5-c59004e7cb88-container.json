@@ -1,0 +1,1 @@
+{"uuid":"96f75a9f-cabe-4246-85f5-c59004e7cb88","name":"Boards.GetBoard","children":["eda6b0b3-aa05-496a-94a4-df87648601c0"],"befores":[{"name":"createRequestSpec","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1700461690499,"stop":1700461690499}],"afters":[],"start":1700461682539,"stop":1700461699000}
